@@ -1,0 +1,59 @@
+#include <stdio.h>
+
+#include <cs50.h>
+
+int main(void)
+{
+ 
+    int count = 0;
+ 
+    float change; //declaration of varaiable.
+ 
+    change = get_float("Change Owed: ");  // Scans input.
+ 
+    while (change < 0)
+  
+    {
+       
+        change = get_float("Change Owed: ");
+       
+    }
+     
+    while (change >= 0.25)  //This is where my code begins counting for change owed. 
+    
+    {
+        
+        change = change - 0.25;
+        
+        count++;
+    }
+    
+    while (change >= 0.10)
+    
+    {
+        change = change - 0.10;
+       
+        count++;
+    }
+        
+    while (change >= 0.05)
+    
+    {
+         
+        change = change - 0.05;
+        
+        count++;
+    }
+      
+    while (change >= 0.01)
+    
+    {
+         
+        change = change - 0.01;
+        
+        count++;
+    }
+  
+    printf("%d\n", count);
+  
+}
