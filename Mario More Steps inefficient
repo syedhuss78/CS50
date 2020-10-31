@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <cs50.h>
+
+int main(void)
+{
+  int Height = get_int("Height:\n");
+  while (Height < 1 || Height > 8)
+  {
+     Height = get_int("Height:\n");
+ }
+if(Height>= 1 && Height <=8){
+ int num = Height-1;
+ for(int i=0;i< num; i++ ){
+  printf(" ");}
+   if(Height >= 1){
+ printf("#  #\n");}
+ for(int i=0;i< num-1; i++ ){
+  printf(" ");
+ }
+ if(Height >= 2){
+ printf("##  ##\n");}
+ for(int i=0;i< num-2; i++ ){
+  printf(" ");
+ }
+  if(Height >= 3){
+ printf("###  ###\n");}
+  for(int i=0;i< num-3; i++ ){
+  printf(" ");
+ } if(Height >= 4){
+ printf("####  ####\n");}
+  for(int i=0;i< num-4; i++ ){
+  printf(" ");
+ } if(Height >= 5){
+ printf("#####  #####\n");}
+   for(int i=0;i< num-5; i++ ){
+  printf(" ");
+ } if(Height >= 6){
+ printf("######  ######\n");}
+   for(int i=0;i< num-6; i++ ){
+  printf(" ");
+ } if(Height >= 7){
+ printf("#######  #######\n");}
+   for(int i=0;i< num-7; i++ ){
+  printf(" ");
+ } if(Height >= 8){
+ printf("########  ########\n");}
+}
+}
+ 
