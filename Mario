@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+#include <cs50.h>
+
+int main(void)
+{
+    
+    int Height; // Variable for the height of the pyramid.
+ 
+    printf("Height: "); //Displays Height on the screen.
+ 
+    scanf("%d", &Height); //Takes input given by User.
+ 
+    while (Height > 8 || Height < 1) // this makes sure my code doesn't accept any number greater than 8 and less than 1. 
+    {
+        printf("Height:\n");
+ 
+        scanf("%d", &Height); 
+    }
+    int space = Height;
+  
+    int hash = 1;
+     
+    for (int I = 0; I < Height; I++)
+    {
+        if (1 == 1)
+        {  
+     
+            for (int x = 0 ; x < space - 1; x++)
+     
+            {
+                printf(" ");
+            }
+        }
+     
+        for (int v = 0; v < hash; v++)
+        {
+            printf("#");
+        }
+     
+        printf("\n");
+     
+        space--;
+     
+        hash++;
+    }
+}
