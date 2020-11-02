@@ -1,0 +1,63 @@
+#include <stdio.h>
+#include <cs50.h>
+#include <math.h>
+#include <string.h> // required libraries.
+
+int main(void)
+{
+    int wordcount = 0;
+    
+    int lettercount = 0;
+    
+    int sentencecount = 0;  //variable declaration.
+    
+    string sentence = get_string("Text: ");// stores inputed sentences
+    
+    int totalchars = strlen(sentence); // calculates total characters in sentence in numbers.
+    
+    for (int i = 0; i < totalchars; i++) //calculates number of words;
+    {
+        if (sentence[i] == ' ')
+       
+        {
+            wordcount++;
+        }
+    }
+    
+    wordcount++; // gets number of words as the code above only cals the spaces so one word is left henceforth we add one.
+    
+    for (int x = 0; x < totalchars; x++) //calculates number of letters;
+    {
+        if ((sentence[x] >= 'a' && sentence[x] <= 'z') || (sentence[x] >= 'A' && sentence[x] <= 'Z'))
+        {
+            lettercount++;
+        }
+    }
+    
+    for (int y = 0; y < totalchars; y++) //calculates number of sentences;
+    {
+        if (sentence[y] == '.' || sentence[y] == '!' || sentence[y] == '?')
+        {
+            sentencecount++;
+        }
+    }
+    
+    float L = ((float) lettercount * 100) / (float) wordcount; //calculates the average number of letters per 100 words in the text
+   
+    float S = ((float) sentencecount * 100) / (float) wordcount; //calculates the average number of sentences per 100 words in the text.
+    
+    float index = (0.0588 * L) - (0.296 * S) - 15.8;
+    
+    if (index > 16) // checks for exceptions.
+    {
+        printf("Grade 16+\n");
+    }
+    else if (index < 1)
+    {
+        printf("Before Grade 1\n");
+    }
+    else
+    {
+        printf("Grade %d\n", (int) round(index));
+    }
+}
