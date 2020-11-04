@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include <cs50.h> //required libraries
+
+int main(int argc, string argv[])
+{
+    int x = atoi(argv[1]); // converts argv value to int
+   
+    string Plain = get_string("plaintext: "); // gets input
+   
+    printf("ciphertext: "); 
+   
+    for (int i = 0; i < strlen(Plain); i++) // this is the cipher code.
+    {
+        if (isalpha(Plain[i])) // checks if it is an alphabet 
+        {
+            int y = Plain[i];
+         
+            y += x;
+         
+            while (y > 122) // when the alphabet exceeds the ascii number it restarts countign from a
+            {
+                int nextalpha = y - 123;
+            
+                int newshift = 97 + nextalpha;
+            
+                y = newshift;
+            }
+         
+            char cypher = y;
+         
+            printf("%c", cypher);
+        }
+        else
+        {
+            printf("%c", Plain[i]);// if the value is not an alphabet it prints out normally
+        }
+    }
+   
+    printf("\n"); // prints next line
+   
+}
